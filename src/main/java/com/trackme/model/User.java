@@ -43,6 +43,10 @@ public class User implements Serializable {
     }
 
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getUserName() {
         return userName;
     }

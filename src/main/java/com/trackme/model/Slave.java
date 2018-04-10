@@ -26,6 +26,11 @@ public class Slave implements Serializable {
     @OneToMany(mappedBy = "slave")
     private List<location> locationList;
 
+    @Column(name = "lat")
+    private String lat;
+
+    @Column(name = "longt")
+    private String longt;
 
     public Slave(Integer s_id) {
         this.s_id = s_id;
@@ -53,5 +58,27 @@ public class Slave implements Serializable {
 
     public void setLocationList(List<location> locationList) {
         this.locationList = locationList;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLongt() {
+        return longt;
+    }
+
+    public void setLongt(String longt) {
+        this.longt = longt;
+    }
+
+    public void addLocation(location loc)
+    {
+        this.locationList.add(loc);
+        loc.setSlave(this);
     }
 }

@@ -30,4 +30,27 @@ public class location implements Serializable{
     @ManyToOne
     private Slave slave;
 
+    public Integer getLat() {
+        return lat;
+    }
+
+    public void setLat(Integer lat) {
+        this.lat = lat;
+    }
+
+    public Integer getLongt() {
+        return longt;
+    }
+
+    public void setLongt(Integer longt) {
+        this.longt = longt;
+    }
+
+    public Slave getSlave() {
+        return slave;
+    }
+
+    public void setSlave(Slave slave) {
+        this.slave = slave;
+    }
 }
