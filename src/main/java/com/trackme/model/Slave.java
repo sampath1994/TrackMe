@@ -1,5 +1,7 @@
 package com.trackme.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -31,6 +33,11 @@ public class Slave implements Serializable {
 
     @Column(name = "longt")
     private String longt;
+
+    public Slave()
+    {
+
+    }
 
     public Slave(Integer s_id) {
         this.s_id = s_id;

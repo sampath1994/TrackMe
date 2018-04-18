@@ -1,5 +1,8 @@
 package com.trackme.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -20,29 +23,30 @@ public class location implements Serializable{
 
 
     @Column(name = "lat")
-    private Integer lat;
+    private String lat;
 
 
     @Column(name = "longt")
-    private Integer longt;
+    private String longt;
 
     @JoinColumn(name = "slave_id", referencedColumnName = "s_id")
     @ManyToOne
+    @JsonIgnore
     private Slave slave;
 
-    public Integer getLat() {
+    public String getLat() {
         return lat;
     }
 
-    public void setLat(Integer lat) {
+    public void setLat(String lat) {
         this.lat = lat;
     }
 
-    public Integer getLongt() {
+    public String getLongt() {
         return longt;
     }
 
-    public void setLongt(Integer longt) {
+    public void setLongt(String longt) {
         this.longt = longt;
     }
 

@@ -21,6 +21,9 @@ public class Master implements Serializable{
     @OneToMany(mappedBy = "master")
     private List<Slave> slaveList;
 
+    public Master(){
+
+    }
 
     public Master(Integer m_id) {
         this.m_id = m_id;
@@ -40,5 +43,11 @@ public class Master implements Serializable{
 
     public void setSlaveList(List<Slave> slaveList) {
         this.slaveList = slaveList;
+    }
+
+    public void addSlave(Slave slave)
+    {
+        this.slaveList.add(slave);
+        slave.setMaster(this);
     }
 }
